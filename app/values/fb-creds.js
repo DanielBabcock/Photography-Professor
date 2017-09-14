@@ -1,6 +1,19 @@
+"use strict";
+
+// register a constant on app that holds credentials for our firebase
+
+app.constant("FBCreds", {
+    apiKey: "AIzaSyDDJZbFp5MZqw1k9qCYQRcF5EXEBdVY9q0",
+    authDomain: "photo-tutor.firebaseapp.com",
+    databaseURL: "https://photo-tutor.firebaseio.com",
+});
+
+
+
 // https://console.firebase.google.com/u/0/project/photo-tutor/overview
 
-
+// Test Data 2, files named based on exif data
+// gs://photo-tutor.appspot.com
 
 
 

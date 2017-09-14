@@ -11,16 +11,25 @@
 
 </header>
 
-<body>
+<bodyng-app="photoTutorial">
+    
+    <!-- ngRoute is going to inject template here,
+    based on the current url (in the browser) -->
+    <div ng-view></div>
 
+    <!-- Third Party Dependencies -->
+    <script src="lib/node_modules/angular/angular.min.js"></script>
+    <script src="lib/node_modules/angular-route/angular-route.min.js"></script>
 
+    <!-- app -->
+    <script src="app/app.js"></script>
+    <script src="app/values/fb-creds.js"></script>
 
-
-    <script src=""></script>
-    <script src=""></script>
-    <script src=""></script>
-    <script src=""></script>
-    <script src=""></script>
+    <!-- factories -->
+    <script src="app/factories/factory.js"></script>
+    
+    <!-- controllers -->
+    <script src="app/controllers/controller.js"></script>
     
 </body>
 </html>
