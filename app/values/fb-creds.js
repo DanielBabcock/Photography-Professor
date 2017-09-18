@@ -19,7 +19,7 @@ app.constant("FBCreds", {
 
 
 
-{/* <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+/* <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -31,4 +31,4 @@ app.constant("FBCreds", {
     messagingSenderId: "67256198673"
   };
   firebase.initializeApp(config);
-</script> */}
+</script> */

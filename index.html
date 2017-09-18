@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- <html lang="en" ng-app="photoTutor"> -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,48 @@
     <title>Document</title>
 </head>
 
-<header>
+<body>
 
-</header>
-
-<bodyng-app="photoTutorial">
+    <div ng-app="PhotoApp">
+        <!-- <div ng-include="'partials/navbar.html'"></div> -->
+            <div>
+                <!-- where the magic happens -->
+                <div ng-view></div>
+            </div>
+    <!-- end ng-app -->
+    </div> 
     
-    <!-- ngRoute is going to inject template here,
-    based on the current url (in the browser) -->
-    <div ng-view></div>
-
     <!-- Third Party Dependencies -->
+    <link rel="stylesheet" type="text/css" href="lib/node_modules/angularjs-slider/dist/rzslider.css"/>
+    
     <script src="lib/node_modules/angular/angular.min.js"></script>
+    <script src="lib/node_modules/angularjs-slider/dist/rzslider.min.js"></script>
+    
     <script src="lib/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="lib/node_modules/firebase/firebase.js"></script>
 
     <!-- app -->
     <script src="app/app.js"></script>
     <script src="app/values/fb-creds.js"></script>
+    <!-- <script src="app/values/flickr-creds.js"></script> -->
+    
+    
 
     <!-- factories -->
-    <script src="app/factories/factory.js"></script>
+    <script src="app/factories/welcomeFactory.js"></script>
+    <script src="app/factories/appHomeFactory.js"></script>
+    <!-- <script src="app/factories/shutterFactory.js"></script> -->
+    <!-- <script src="app/factories/profileFactory.js"></script> -->
+    
+    
+    
     
     <!-- controllers -->
-    <script src="app/controllers/controller.js"></script>
+    <script src="app/controllers/welcomeController.js"></script>
+    <script src="app/controllers/appHomeController.js"></script>
+    <script src="app/controllers/navbarController.js"></script>
+    
+    
     
 </body>
 </html>
