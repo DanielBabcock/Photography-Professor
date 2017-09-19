@@ -6,6 +6,8 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
     
     console.log("app: ");
 
+    const settingsArray = [];
+
     const imageData = [
         {
             "image": "0",
@@ -105,9 +107,14 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
                 const response = imageData;
                 const matchingImages = response.filter(image => {
                     return image.aperture === $scope.apertureSlider.value;
+
                 });
                
-                const alllowedShutterSpeeds = matchingImages.map(image => {
+                // passing info to empty array
+                    settingsArray.splice(0, 1, $scope.apertureSlider.value);
+                    console.log("settingsArray:", settingsArray);
+
+                const allowedShutterSpeeds = matchingImages.map(image => {
                     return {
                         // legend: image.shutterSpeed,
                         // legend: $scope.shutterSpeedSlider.options.stepsArray.legend,
@@ -118,7 +125,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
                 //     return image.shutterSpeed === $scope.shutterSpeedSlider.value;
                 // });
                 // console.log("allowedshutters", alllowedShutterSpeeds);  
-                $scope.shutterSpeedSlider.options.stepsArray = alllowedShutterSpeeds;
+                $scope.shutterSpeedSlider.options.stepsArray = allowedShutterSpeeds;
             }
         }
     };
@@ -143,9 +150,14 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
 
                 // Update filter based on Shutter Speed
                 let shutterResponse = imageData;
-                let matchingImages = shutterResponse.filter(image => {
+                let matchingImages = shutterResponse.filter(image => {                   
                     return image.shutterSpeed === $scope.shutterSpeedSlider.value;
                 });
+
+
+                    // passing info to empty array
+                    settingsArray.splice(0, 1, $scope.shutterSpeedSlider.value);
+                    console.log("settingsArray:", settingsArray);
                
                 let allowedISO = matchingImages.map(image => {
                     return {
@@ -176,23 +188,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             ],
 
             id: 'iso-id',
-            // onEnd: function(id) {
-            //     console.log('on end ' + id); // logs 'on end slider-id'
-                
-                // Update iso slider based on available iso
-                // let isoResponse = imageData;
-                // let matchingImages = imageData.filter(image => {
-                //     return image.iso === $scope.isoSlider.value;
-                // });  
-                // let alllowedISO = matchingImages.map(image => {
-                //     return {
-                //         legend: image.iso,
-                //         value: image.iso  
-                //     };
-                // });
-                // console.log("iso images: ", matchingImages);
-                
-            // }
+         
             }
         };
         
@@ -200,14 +196,15 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
         // from the above filters to the imageCardFactory/imageCardController
         // and outputs the corresponding image from database to the card.html
         // as a card.
-        // Below is what is in the partial/appHome.html 
-        // <input ng-click="shutterClickFunction()" type="image" src="images/shutterBtn.jpeg" alt="Submit">
+        // This is what is in the partial/appHome.html 
+        // <input ng-click="shutterClickFunction()" type="image" 
+        // src="images/shutterBtn.jpeg" alt="Submit">
         
         // $scope.count = 0;
         $scope.shutterClickFunction = function() {
             $scope.count++;
-            console.log("shutter was clicked: ", shutterClickFunction);
-        }
+            console.log("shutter was clicked: ");
+        };
 
 });
 
