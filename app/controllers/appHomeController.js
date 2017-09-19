@@ -4,13 +4,15 @@
 
 app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $location){
     
-    console.log("app: ");
+    // console.log("app: ");
 
     const settingsArray = [];
+    const repeatLoop = [];
+
 
     const imageData = [
         {
-            "image": "0",
+            "image": "images/0.jpg",
             "shutterSpeed": "1/13",
             "aperture": "2.8",
             "iso": "320",
@@ -20,7 +22,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "userNotes": []
         },
         {
-            "image": "0",
+            "image": "images/0.jpg",
             "shutterSpeed": "1/13",
             "aperture": "2.8",
             "iso": "1000",
@@ -30,7 +32,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "userNotes": []
         },
         {
-            "image": "1",
+            "image": "images/1.jpg",
             "shutterSpeed": "1/60",
             "aperture": "2.8",
             "iso": "400",
@@ -40,7 +42,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "userNotes": []
         },
         {
-            "image": "0",
+            "image": "images/2.jpg",
             "shutterSpeed": "1/13",
             "aperture": "2.8",
             "iso": "500",
@@ -50,7 +52,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "userNotes": []
         },
         {
-            "image": "2",
+            "image": "images/3.jpg",
             "shutterSpeed": "1/100",
             "aperture": "2.8",
             "iso": "50",
@@ -60,7 +62,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "userNotes": []
         },
         {
-            "image": "3",
+            "image": "images/4.jpg",
             "shutterSpeed": "1/20",
             "aperture": "2.8",
             "iso": "50",
@@ -70,7 +72,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "userNotes": []
         },
         {
-            "image": "4",
+            "image": "images/logo.png",
             "shutterSpeed": "1/2000"  ,      
             "aperture": "2.8" ,
             "iso": "800",
@@ -112,7 +114,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
                
                 // passing info to empty array
                     settingsArray.splice(0, 1, $scope.apertureSlider.value);
-                    console.log("settingsArray:", settingsArray);
+                    // console.log("settingsArray:", settingsArray);
 
                 const allowedShutterSpeeds = matchingImages.map(image => {
                     return {
@@ -156,7 +158,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
 
 
                     // passing info to empty array
-                    settingsArray.splice(0, 1, $scope.shutterSpeedSlider.value);
+                    settingsArray.splice(1, 1, $scope.shutterSpeedSlider.value);
                     console.log("settingsArray:", settingsArray);
                
                 let allowedISO = matchingImages.map(image => {
@@ -189,6 +191,13 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
 
             id: 'iso-id',
          
+            onEnd: function(id) {
+
+                // passing info to empty array
+                settingsArray.splice(2, 1, $scope.isoSlider.value);
+                // console.log("settingsArray:", settingsArray);
+
+            }
             }
         };
         
@@ -202,9 +211,35 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
         
         // $scope.count = 0;
         $scope.shutterClickFunction = function() {
-            $scope.count++;
+            
+            imageData.forEach(function(imageLoop){
+                if(imageLoop.aperture === settingsArray[0] && imageLoop.shutterSpeed === settingsArray[1] && imageLoop.iso === settingsArray[2]){
+                     // do this
+                    $scope.imageLoop = imageLoop.image;
+                    // console.log("imageLoop: ", imageLoop);
+                    
+                    
+                    repeatLoop.push(imageLoop);
+                    $scope.repeatLoop = repeatLoop;
+
+                    // console.log("repeatLoop: ", repeatLoop);
+  
+                }
+                    
+            });
+
             console.log("shutter was clicked: ");
         };
+
+        // delete card function
+
+        $scope.deleteCardFunction = function(item){
+            $scope.repeatLoop.splice(item, 1);
+            repeatLoop.splice(item, 0);
+            console.log("item: ", item);
+        }
+
+
 
 });
 
