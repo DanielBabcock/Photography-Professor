@@ -1,0 +1,31 @@
+
+<div class="container container--auth">
+    <!-- https://material.angularjs.org/latest/demo/card -->
+    <div ng-controller="imageCardCtrl" class="imageCard">    
+           
+            <!-- Users Image -->
+        <img ng-src="{{imagePath}}" class="userImage">
+           
+            <!-- NOTES PULLED FROM EXIF DATA,
+            Aperture: ___  Shutter Speed: ____ ISO: ____
+            Professor NOtes:_____ -->
+        <div>
+          Image Notes: 
+            <p ng-src="{{imageNotes}}"></p>
+        </div>
+           
+            <!-- USER ADDED NOTES -->
+        <div>
+          User Notes: 
+            <input type="text" class="insertUserNotes">
+            <p ng-src="{{savedUserNotes}}"></p>
+        </div>
+            
+            <!-- KEEP/DELETE BUTTONS -->
+        <div class"cardBtns">
+          <button class="keepItBtn">Keep</button>
+          <button class="deleteItBtn">Delete</button>
+        </div>
+
+    </div>         
+</div>

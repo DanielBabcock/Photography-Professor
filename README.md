@@ -24,3 +24,7 @@ please login 'here'"
 7) process continues
 
 8) user becomes master image clicker and logs out.
+
+Other Notes: 
+    Large aperture = Small f-number = Shallow (small) depth of field
+    Small aperture = Larger f-number = Deeper (larger) depth of field
