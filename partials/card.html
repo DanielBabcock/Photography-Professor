@@ -1,0 +1,32 @@
+
+<div class="container container--auth">
+    
+    <!-- **********************************************************************
+    ****************************Card************************************
+    ********************************************************************** -->
+    <!-- https://material.angularjs.org/latest/demo/card -->
+
+    <div ng-controller="AppCtrl" ng-cloak>
+        <md-content class="md-padding" layout-xs="column" layout="row">
+            <div flex-xs flex-gt-xs="50" layout="column">
+                <md-card>
+                  <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                  <md-card-title>
+                    <md-card-title-text>
+                      <span class="md-headline">Action buttons</span>
+                    </md-card-title-text>
+                  </md-card-title>
+                  <md-card-content>
+                    <p>
+                      Image Notes: {{imageNotes}}
+                    </p>
+                  </md-card-content>
+                  <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="keepItBtn">Keep</md-button>
+                    <md-button class="deleteItBtn">Delete</md-button>
+                  </md-card-actions>
+                </md-card>
+            </div> 
+        </md-content>  
+    </div>         
+</div>

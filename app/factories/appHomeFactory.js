@@ -6,18 +6,7 @@ app.factory("appHomeFactory", function($q, $http, FBCreds){
 
     return{};
 
-    // **********************************************************************
-    // ****************************SLIDER************************************
-    // **********************************************************************
-    // .controller('appHomeController', function($scope) {
-        
-        //   $scope.aperture = );
-        //   $scope.iso = );
-        //   $scope.shutterSpeed = );
-        // });
 
-
-        
    
 
 });
