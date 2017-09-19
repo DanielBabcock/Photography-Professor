@@ -36,7 +36,7 @@ app.controller("welcomeCtrl", function($scope, $window, welcomeFactory, $locatio
         welcomeFactory.authWithProvider()
             .then(result => {
                 let user = result.user.uid;
-                $location.path('/task-list');
+                $location.path('/appHome');
                 vm.$apply();
             })
             .catch(error => console.log("google login error", error.message, error.code));

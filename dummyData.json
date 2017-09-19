@@ -1,0 +1,72 @@
+[
+    {
+        "image": "0",
+        "shutterSpeed": "1/13",
+        "aperture": "2.8",
+        "iso": "320",
+        "location": "images/0.jpg",
+        "imageNotes": "Shallow depth of field, slow shutter speed, and low grain ISO.",
+        "exposure": "-2",
+        "userNotes": []
+    },
+    {
+        "image": "0",
+        "shutterSpeed": "1/13",
+        "aperture": "2.8",
+        "iso": "1000",
+        "location": "images/0.jpg",
+        "imageNotes": "",
+        "exposure": "-1",
+        "userNotes": []
+    },
+    {
+        "image": "1",
+        "shutterSpeed": "1/60",
+        "aperture": "2.8",
+        "iso": "400",
+        "location": "images/1.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "0",
+        "shutterSpeed": "1/13",
+        "aperture": "2.8",
+        "iso": "500",
+        "location": "images/0.jpg",
+        "imageNotes": "",
+        "exposure": "+1",
+        "userNotes": []
+    },
+    {
+        "image": "2",
+        "shutterSpeed": "1/100",
+        "aperture": "2.8",
+        "iso": "50",
+        "location": "images/2.jpg",
+        "imageNotes": "Very low ISO",
+        "exposure": "+2",
+        "userNotes": []
+    },
+    {
+        "image": "3",
+        "shutterSpeed": "1/20",
+        "aperture": "2.8",
+        "iso": "50",
+        "location": "images/3.jpg",
+        "imageNotes": "Slow shutter, very low ISO",
+        "exposure": "-2",
+        "userNotes": []
+    },
+    {
+        "image": "4",
+        "shutterSpeed": "1/2000"  ,      
+        "aperture": "2.8" ,
+        "iso": "800",
+        "location": "images/4.jpg",
+        "imageNotes": "fast shutter.",
+        "exposure": "-2",
+        "userNotes": []
+    }
+]

@@ -13,7 +13,9 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "aperture": "2.8",
             "iso": "320",
             "location": "images/0.jpg",
-            "imageNotes": "Shallow depth of field, slow shutter speed, and low grain ISO."
+            "imageNotes": "Shallow depth of field, slow shutter speed, and low grain ISO.",
+            "exposure": "-2",
+            "userNotes": []
         },
         {
             "image": "0",
@@ -21,7 +23,9 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "aperture": "2.8",
             "iso": "1000",
             "location": "images/0.jpg",
-            "imageNotes": ""
+            "imageNotes": "",
+            "exposure": "-1",
+            "userNotes": []
         },
         {
             "image": "1",
@@ -30,15 +34,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "iso": "400",
             "location": "images/1.jpg",
             "imageNotes": "",
-            "userNotes": []
-        },
-        {
-            "image": "0",
-            "shutterSpeed": "1/13",
-            "aperture": "2.8",
-            "iso": "100",
-            "location": "images/0.jpg",
-            "imageNotes": "",
+            "exposure": "0",
             "userNotes": []
         },
         {
@@ -48,6 +44,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "iso": "500",
             "location": "images/0.jpg",
             "imageNotes": "",
+            "exposure": "+1",
             "userNotes": []
         },
         {
@@ -57,6 +54,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "iso": "50",
             "location": "images/2.jpg",
             "imageNotes": "Very low ISO",
+            "exposure": "+2",
             "userNotes": []
         },
         {
@@ -66,6 +64,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "iso": "50",
             "location": "images/3.jpg",
             "imageNotes": "Slow shutter, very low ISO",
+            "exposure": "-2",
             "userNotes": []
         },
         {
@@ -74,15 +73,17 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "aperture": "2.8" ,
             "iso": "800",
             "location": "images/4.jpg",
-            "imageNotes": "fast shutter, some grain due to mid ISO.",
+            "imageNotes": "fast shutter.",
+            "exposure": "-2",
             "userNotes": []
         }
     ];
 
-     // **********************************************************************
+    // **********************************************************************
     // ****************************SLIDER************************************
     // **********************************************************************
 
+    // Legends are screwed up on SS and ISO
     $scope.apertureSlider = {
         // value: 16,
         options: {
@@ -108,7 +109,8 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
                
                 const alllowedShutterSpeeds = matchingImages.map(image => {
                     return {
-                        legend: image.shutterSpeed,
+                        // legend: image.shutterSpeed,
+                        // legend: $scope.shutterSpeedSlider.options.stepsArray.legend,
                         value: image.shutterSpeed  
                     };
                 });
@@ -127,11 +129,11 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             showTicksValues: true,
             showSelectionBar: true,
             stepsArray: [
-              {value: "1/13", legend: 'slowest'},
-              {value: "1/20", legend: ''},
-              {value: "1/60", legend: ''},
-              {value: "1/100", legend: ''},
-              {value: "1/2000", legend: 'fast'}
+              {value: "1/13", legend: 'Slow'},
+              {value: "1/20", legend: 'Less Slow'},
+              {value: "1/60", legend: 'less slow'},
+              {value: "1/100", legend: 'avg'},
+              {value: "1/2000", legend: 'Fast'}
             ],
             id: 'shutter-id',
             // API Call here
@@ -144,15 +146,10 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
                 let matchingImages = shutterResponse.filter(image => {
                     return image.shutterSpeed === $scope.shutterSpeedSlider.value;
                 });
-                // console.log("matching images", matchingImages);
-                // console.log("scope shutter: " + $scope.shutterSpeedSlider.value); // logs 'on end slider-id'
-            
-                // let allowedISO = matchingImages.map(image => {
-                //     return image.shutterSpeed === $scope.isoSlider.value;
-                // });
-                let alllowedISO = matchingImages.map(image => {
+               
+                let allowedISO = matchingImages.map(image => {
                     return {
-                        legend: image.iso,
+                        // legend: image.iso,
                         value: image.iso  
                     };
                 });
@@ -170,34 +167,47 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             showTicksValues: true,
             showSelectionBar: true,
             stepsArray: [
-              {value: "50", legend: 'low'},
-              {value: "100", legend: 'low'},
-              {value: "320", legend: ''},
-              {value: "400", legend: ''},
-              {value: "800", legend: ''},
-              {value: "1000", legend: 'high'}
+              {value: "50", legend: 'low grain'},
+              {value: "100", legend: 'low grain'},
+              {value: "320", legend: 'some noise'},
+              {value: "400", legend: 'some noise'},
+              {value: "800", legend: 'more noise'},
+              {value: "1000", legend: 'high grain'}
             ],
 
             id: 'iso-id',
-            onEnd: function(id) {
-                console.log('on end ' + id); // logs 'on end slider-id'
+            // onEnd: function(id) {
+            //     console.log('on end ' + id); // logs 'on end slider-id'
                 
                 // Update iso slider based on available iso
-                let isoResponse = imageData;
-                let matchingImages = isoResponse.filter(image => {
-                    return image.iso === $scope.isoSlider.value;
-                });  
-                let alllowedISO = matchingImages.map(image => {
-                    return {
-                        legend: image.iso,
-                        value: image.iso  
-                    };
-                });
+                // let isoResponse = imageData;
+                // let matchingImages = imageData.filter(image => {
+                //     return image.iso === $scope.isoSlider.value;
+                // });  
+                // let alllowedISO = matchingImages.map(image => {
+                //     return {
+                //         legend: image.iso,
+                //         value: image.iso  
+                //     };
+                // });
                 // console.log("iso images: ", matchingImages);
                 
+            // }
             }
-    }
-};
+        };
+        
+    // Shutter button function here. It passes selected settings 
+        // from the above filters to the imageCardFactory/imageCardController
+        // and outputs the corresponding image from database to the card.html
+        // as a card.
+        // Below is what is in the partial/appHome.html 
+        // <input ng-click="shutterClickFunction()" type="image" src="images/shutterBtn.jpeg" alt="Submit">
+        
+        // $scope.count = 0;
+        $scope.shutterClickFunction = function() {
+            $scope.count++;
+            console.log("shutter was clicked: ", shutterClickFunction);
+        }
 
 });
 
