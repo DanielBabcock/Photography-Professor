@@ -23,12 +23,12 @@ app.config($routeProvider => {
     // which is a object specifying which template to display 
     // and which controller to instantiate
     $routeProvider
+        // .when('/', {
+        //     templateUrl: 'partials/welcomePage.html',
+        //     controller: 'welcomeCtrl'
+        //     // resolve: {isAuth}
+        // })
         .when('/', {
-            templateUrl: 'partials/welcomePage.html',
-            controller: 'welcomeCtrl'
-            // resolve: {isAuth}
-        })
-        .when('/appHome', {
             templateUrl: 'partials/appHome.html',
             controller: 'appHomeCtrl'
         })

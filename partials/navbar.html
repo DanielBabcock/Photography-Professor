@@ -5,14 +5,18 @@
 <!-- ng-include"''"" -->
 
 <nav class="navbar navbar-default" ng-controller="navCtrl">
-
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        
     <!-- Logo left -->
 
-    <ul>
-        <li><img src="images/testLogo.png"></li>            
-        <li><a href="partials/userProfile.html">User Name: Images</a></li>
-        <li><a href="#">Logout</a></li>
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><img src="images/testLogo.png"></li>    
+            <!-- <li><a ng-show="!isLoggedIn" ng-click="login()">Login</a></li>      -->
+            <li><button ng-show="!isLoggedIn" ng-click="loginGoogle()" class="btn btn-info">Login</button></li>
+            <li><button ng-show="isLoggedIn" ng-click="logOut()">Logout</button></li>
+        </ul>
     
-    
+    </div><!-- /.navbar-collapse -->
 </nav>
+
+ 
