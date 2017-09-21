@@ -6,9 +6,6 @@ app.factory("appHomeFactory", function($q, $http, FBCreds){
 
     return{};
 
-
-   
-
 });
 
 

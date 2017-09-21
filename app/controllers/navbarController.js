@@ -40,41 +40,31 @@ app.controller("navCtrl", function($scope, $window, $rootScope, welcomeFactory, 
               })
               .catch(error => console.log("google login error", error.message, error.code));
       };
+
+      // default to false
+      vm.isLoggedIn = false;
+      
+      
+          vm.logOut = () => welcomeFactory.logOut();
+          
+           // hmmm... how, when, and why does this actually work?
+            firebase.auth().onAuthStateChanged(function(user) {
+              if (user) {
+                vm.isLoggedIn = true;
+                vm.$apply();
+              } else {
+                vm.isLoggedIn = false;
+                $window.location.href = "#!/login";
+              }
+            });
   
   
   });
 
 
 
-//     // probs not a good idea
-//     // the idea, though is to illustrate the use of $rootScope
-//     // to make values available in multiple scopes.
-//     $rootScope.showSearch = true;
-
-//     // instantiate an alias for $scope
-//     const vm = $scope;
-
-//     // bind searchText to scope
-
-    
-//     // default to false
-//     vm.isLoggedIn = false;
-
-//     // this will be userd to filter the list based on
-//     // user's input into the search bar
-
-//     // vm.logOut = () => userFactory.logOut();
-    
-//      // hmmm... how, when, and why does this actually work?
-//       firebase.auth().onAuthStateChanged(function(user) {
-//         if (user) {
-//           vm.isLoggedIn = true;
-//           vm.$apply();
-//         } else {
-//           vm.isLoggedIn = false;
-//           $window.location.href = "#!/login";
-//         }
-//       });
-
-
-// });
+  
+      
+      
+  
+  

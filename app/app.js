@@ -32,10 +32,10 @@ app.config($routeProvider => {
             templateUrl: 'partials/appHome.html',
             controller: 'appHomeCtrl'
         })
-        .when('/card', {
-            templateUrl: 'partials/card.html',
-            controller: 'imageCardCtrl'
-        })
+        // .when('/card', {
+        //     templateUrl: 'partials/card.html',
+        //     controller: 'imageCardCtrl'
+        // })
 
         // .when('/login', {
         //     templateUrl: 'partials/navbar.html',
