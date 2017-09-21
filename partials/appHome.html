@@ -3,7 +3,7 @@
     <!-- **********************************************************************
     ****************************Nav Bar************************************
     ********************************************************************** -->>
-    <div ng-include="'partials/navbar.html'"></div>
+    <!-- <div ng-include="'partials/navbar.html'"></div> -->
         
     <!-- **********************************************************************
     ****************************Scene************************************
@@ -39,11 +39,18 @@
     <!-- **********************************************************************
     ****************************shutter Btn************************************
     ********************************************************************** -->
+    <br>
+    <br>
+    <br>
+    <br>
     <div>
-        <input ng-click="shutterClickFunction()" type="image" src="images/shutterBtn.jpeg" alt="Submit">
-            <br> Press Me, I'm the shutter button.
-            
+        <button ng-click="shutterClickFunction()" type="image" src="images/shutterBtn.jpeg" alt="Submit">
+            {{submitButtonText}}Shutter Button</button>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <!-- **********************************************************************
     ****************************image cards************************************
@@ -63,14 +70,14 @@
             <!-- USER ADDED NOTES -->
         <div>
                 User Notes: 
-            <input type="text" class="insertUserNotes">
+            <input type="text">
             <p ng-src="{{image.userNotes}}"></p>
         </div>
             
             <!-- KEEP/DELETE BUTTONS -->
         <div class"cardBtns">
             <!-- <button class="keepItBtn" ng-click="()">Keep</button> -->
-            <button class="deleteItBtn" ng-click="deleteCardFunction(index)">Delete</button>
+            <button ng-click="deleteCardFunction(index)">Delete</button>
         </div>
     </div>
     

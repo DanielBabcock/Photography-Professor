@@ -2,7 +2,7 @@
 
 // $scope.firebase = $firebase(new Firebase("https://photo-tutor.firebaseio.com/"));
 
-app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $location){
+app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $location, cardFactory){
     
     // console.log("app: ");
 
@@ -19,16 +19,6 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "location": "images/0.jpg",
             "imageNotes": "Shallow depth of field, slow shutter speed, and low grain ISO.",
             "exposure": "-2",
-            "userNotes": []
-        },
-        {
-            "image": "images/0.jpg",
-            "shutterSpeed": "1/13",
-            "aperture": "2.8",
-            "iso": "1000",
-            "location": "images/0.jpg",
-            "imageNotes": "",
-            "exposure": "-1",
             "userNotes": []
         },
         {
@@ -61,26 +51,6 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "exposure": "+2",
             "userNotes": []
         },
-        {
-            "image": "images/4.jpg",
-            "shutterSpeed": "1/20",
-            "aperture": "2.8",
-            "iso": "50",
-            "location": "images/3.jpg",
-            "imageNotes": "Slow shutter, very low ISO",
-            "exposure": "-2",
-            "userNotes": []
-        },
-        {
-            "image": "images/logo.png",
-            "shutterSpeed": "1/2000"  ,      
-            "aperture": "2.8" ,
-            "iso": "800",
-            "location": "images/4.jpg",
-            "imageNotes": "fast shutter.",
-            "exposure": "-2",
-            "userNotes": []
-        }
     ];
 
     // **********************************************************************
@@ -210,37 +180,33 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
         // src="images/shutterBtn.jpeg" alt="Submit">
         
         // $scope.count = 0;
+
         $scope.shutterClickFunction = function() {
             
             imageData.forEach(function(imageLoop){
-                if(imageLoop.aperture === settingsArray[0] && imageLoop.shutterSpeed === settingsArray[1] && imageLoop.iso === settingsArray[2]){
+                if(imageLoop.aperture === settingsArray[0] && 
+                    imageLoop.shutterSpeed === settingsArray[1] && 
+                    imageLoop.iso === settingsArray[2]){
                      // do this
                     $scope.imageLoop = imageLoop.image;
                     // console.log("imageLoop: ", imageLoop);
-                    
                     
                     repeatLoop.push(imageLoop);
                     $scope.repeatLoop = repeatLoop;
 
                     // console.log("repeatLoop: ", repeatLoop);
-  
-                }
-                    
+                }       
             });
 
             console.log("shutter was clicked: ");
         };
 
         // delete card function
-
         $scope.deleteCardFunction = function(item){
             $scope.repeatLoop.splice(item, 1);
             repeatLoop.splice(item, 0);
             console.log("item: ", item);
-        }
-
-
-
+        };
 });
 
 

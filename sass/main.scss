@@ -1,0 +1,65 @@
+$lobster: bisque;
+$accent: red;
+$white: #ffffff;
+$darkaccent: #7a0303;
+
+body{
+    background-color: $lobster;
+}
+
+h1 {
+    text-align: center;
+}
+
+.navbar-default {
+    background-color: $accent;
+}
+.navbar-default .navbar-brand {
+    color: $white;
+}
+.navbar-default .navbar-nav>li>a {
+    color: $white;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: $white;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: $darkaccent;
+}
+
+.btn-info {
+    color: $white;
+    background-color: $accent;
+    border-color: #46b8da;
+}
+.main-container {
+    border: 2px dashed $accent;
+}
+
+.search-bar-spacing{
+    margin-bottom: 20px;
+}
+
+.container--auth {
+  background-color: white;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+}
+
+.search-bar-spacing {
+  margin-bottom: 20px;
+}
+
+.title-bar {
+  font-weight: bold; 
+}
+
+.form--demo {
+  background-color: white;
+  border: 2px solid #ccc;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+}
