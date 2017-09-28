@@ -6,8 +6,9 @@
     for instance, a user doesn't see the 'logout' button until they are logged in...
  */
 
-app.controller("navCtrl", function($scope, $window, $rootScope, welcomeFactory, $location){
+app.controller("navCtrl", function($scope, $window, $rootScope, cardFactory, welcomeFactory, $location){
 
+  let user = null;
 
   const vm = $scope;
   
@@ -28,20 +29,30 @@ app.controller("navCtrl", function($scope, $window, $rootScope, welcomeFactory, 
     //       .catch(error => console.log("error with login", error));
     //   };
   
+
+   
+
       vm.logIn = () => welcomeFactory.logIn(vm.account)
                                   .then($window.location.href = '#!/appHome');
+
+                                  
   
       vm.loginGoogle = function(){
           welcomeFactory.authWithProvider()
               .then(result => {
-                  let user = result.user.uid;
+                  user = result.user.uid;
                   $location.path('/appHome');
                   vm.$apply();
-
+                  cardFactory.getAllCards()
+                  .then((results)=>{
+                    console.log("results navbarctrl: ", results);
+                  });
                   console.log("loginGoogle at navbarCtrl", result.user.uid);
               })
+                
               .catch(error => console.log("google login error", error.message, error.code));
       };
+     
 
       // default to false
       vm.isLoggedIn = false;

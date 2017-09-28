@@ -27,7 +27,7 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
             "imageNotes": "Shallow depth of field, slow shutter speed, and low grain ISO.",
             "exposure": "-2",
             "userNotes": [],
-            "user": currentUser
+            "uid": currentUser
         },
         {
             "image": "images/1.jpg",
@@ -37,7 +37,9 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
             "location": "images/1.jpg",
             "imageNotes": "blah blah",
             "exposure": "0",
-            "userNotes": []
+            "userNotes": [],
+            "uid": currentUser
+            
         },
         {
             "image": "images/2.jpg",
@@ -47,7 +49,8 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
             "location": "images/0.jpg",
             "imageNotes": "blah blah",
             "exposure": "+1",
-            "userNotes": []
+            "userNotes": [],
+            "uid": currentUser
         },
         {
             "image": "images/3.jpg",
@@ -57,16 +60,10 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
             "location": "images/2.jpg",
             "imageNotes": "Very low ISO",
             "exposure": "+2",
-            "userNotes": []
+            "userNotes": [],
+            "uid": currentUser
         },
     ];
-
-    // **********************************************************************
-    // ****************************LOAD USER CARDS************************************
-    // **********************************************************************
-
-    // cardFactory,makeArray();
-    cardFactory.getAllCards();
     
     // **********************************************************************
     // ****************************SLIDER************************************
@@ -213,7 +210,10 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
                     
                     console.log("repeatLoop: ", repeatLoop);
 
-                    cardFactory.createCards(repeatLoop);
+                        // sends to cardsFactory.
+                    console.log("shutterClickFunction currentUser: ", currentUser);
+                        
+                    cardFactory.createCards(imageLoop, currentUser);
                 }       
             });
 

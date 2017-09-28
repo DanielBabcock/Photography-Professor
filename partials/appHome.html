@@ -55,14 +55,45 @@
     ****************************image cards************************************
     ********************************************************************** -->
     <div class="container" ng-repeat="(index, image) in repeatLoop">
-        <div class="userCard">
+        <div class="newUserCards">
         <!-- Users Image -->
             <img ng-model="image.image" ng-src="{{image.image}}" class="userImage">
             
             <div class="notes">
-                <div>
+                <div class="imageNotes">
                         Image Notes: 
                     <p ng-model="imageNotes.imageNotes" ng-src="{{imageNotes.imageNotes}}"></p>
+                </div>
+                    
+                    <!-- USER ADDED NOTES -->
+                <!-- <div>
+                        User Notes: 
+                    <input type="text">
+                    <p ng-model="image.userNotes" ng-src="{{image.userNotes}}"></p>
+                </div> -->
+            </div> 
+                
+                <!-- KEEP/DELETE BUTTONS -->
+            <div class"cardBtns">
+                <!-- <button class="keepItBtn" ng-click="()">Keep</button> -->
+                <button id="deleteBtn" ng-click="deleteCardFunction(index)">Delete</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- **********************************************************************
+    ****************************ALL FIREBASE Cards************************************
+    ********************************************************************** -->
+    <div class="getContainer" ng-repeat="(index, image) in repeatLoop">
+        <div class="allUserCards">
+        <!-- Users Image -->
+            <img ng-src="{{}}" class="allUserImage">
+            
+            <div class="notes">
+                <div class="allImageNotes">
+                        Image Notes: 
+                    <p ng-src="{{}}"></p>
                 </div>
                     
                     <!-- USER ADDED NOTES -->

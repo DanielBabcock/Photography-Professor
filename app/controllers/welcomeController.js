@@ -7,22 +7,21 @@
     login with google.
  */
 
-app.controller("welcomeCtrl", function($scope, $window, welcomeFactory, $location){
+app.controller("welcomeCtrl", function($scope, $window, cardFactory, welcomeFactory, $location){
     console.log("app welcomeController: ");
     
  
-    // $scope.loginGoogle = function(){
-    //     welcomeFactory.authWithProvider()
-    //         .then(result => {
-    //             let user = result.user.uid;
-                
-    //             console.log("user: ", result);
+    welcomeFactory.isAuthenticated();
+    // cardFactory,makeArray();
+    // cardFactory.getAllCards()
+    //     .then( (allCards) => {
+    //         console.log("allCards", allCards);
+    //     })
+    
 
-    //             $location.path('/appHome');
-    //             $scope.$apply();
-    //         })
-    //         .catch(error => console.log("google login error", error.message, error.code));
-    // };
+
+
+
 
 
 });
