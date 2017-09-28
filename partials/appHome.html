@@ -1,10 +1,10 @@
+<!-- // **********************************************
+//     Controls: Gif Scene, buttons, cards. 
+// ********************************************** -->
 
-<div class="container container--auth">
-    <!-- **********************************************************************
-    ****************************Nav Bar************************************
-    ********************************************************************** -->>
-    <!-- <div ng-include="'partials/navbar.html'"></div> -->
-        
+<div  class="container container--auth">
+        <!-- onload="getAllCards()" -->
+
     <!-- **********************************************************************
     ****************************Scene************************************
     ********************************************************************** -->
@@ -16,7 +16,6 @@
     ****************************SLIDERs************************************
     ********************************************************************** -->
     
-        <!-- ANOTHER TEST SLIDER -->
         <div>
         Aperture
                 <rzslider rz-slider-model="apertureSlider.value"
@@ -37,14 +36,14 @@
             rz-slider-options="isoSlider.options"></rzslider>  
         </div>
     <!-- **********************************************************************
-    ****************************shutter Btn************************************
+    ****************************SHUTTER Btn************************************
     ********************************************************************** -->
     <br>
     <br>
     <br>
     <br>
     <div>
-        <button ng-click="shutterClickFunction()" type="image" src="images/shutterBtn.jpeg" alt="Submit">
+        <button id="shutterBtn" ng-click="shutterClickFunction()" type="image" src="images/shutterBtn.jpeg" alt="Submit">
             {{submitButtonText}}Shutter Button</button>
     </div>
     <br>
@@ -55,29 +54,30 @@
     <!-- **********************************************************************
     ****************************image cards************************************
     ********************************************************************** -->
-    <div class="userCard" ng-repeat="(index, image) in repeatLoop">
+    <div class="container" ng-repeat="(index, image) in repeatLoop">
+        <div class="userCard">
         <!-- Users Image -->
-        <img ng-src="{{image.image}}" class="userImage">
-        
-            <!-- NOTES PULLED FROM EXIF DATA,
-            Aperture: ___  Shutter Speed: ____ ISO: ____
-            Professor NOtes:_____ -->
-        <div>
-                Image Notes: 
-            <p ng-src="{{image.imageNotes}}"></p>
-        </div>
+            <img ng-model="image.image" ng-src="{{image.image}}" class="userImage">
             
-            <!-- USER ADDED NOTES -->
-        <div>
-                User Notes: 
-            <input type="text">
-            <p ng-src="{{image.userNotes}}"></p>
-        </div>
-            
-            <!-- KEEP/DELETE BUTTONS -->
-        <div class"cardBtns">
-            <!-- <button class="keepItBtn" ng-click="()">Keep</button> -->
-            <button ng-click="deleteCardFunction(index)">Delete</button>
+            <div class="notes">
+                <div>
+                        Image Notes: 
+                    <p ng-model="imageNotes.imageNotes" ng-src="{{imageNotes.imageNotes}}"></p>
+                </div>
+                    
+                    <!-- USER ADDED NOTES -->
+                <!-- <div>
+                        User Notes: 
+                    <input type="text">
+                    <p ng-model="image.userNotes" ng-src="{{image.userNotes}}"></p>
+                </div> -->
+            </div> 
+                
+                <!-- KEEP/DELETE BUTTONS -->
+            <div class"cardBtns">
+                <!-- <button class="keepItBtn" ng-click="()">Keep</button> -->
+                <button id="deleteBtn" ng-click="deleteCardFunction(index)">Delete</button>
+            </div>
         </div>
     </div>
     

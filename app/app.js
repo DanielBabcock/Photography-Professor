@@ -23,40 +23,19 @@ app.config($routeProvider => {
     // which is a object specifying which template to display 
     // and which controller to instantiate
     $routeProvider
-        // .when('/', {
-        //     templateUrl: 'partials/welcomePage.html',
-        //     controller: 'welcomeCtrl'
-        //     // resolve: {isAuth}
-        // })
         .when('/', {
+            templateUrl: 'partials/welcomePage.html',
+            controller: 'welcomeCtrl'
+            // resolve: {isAuth}
+        })
+        .when('/appHome', {
             templateUrl: 'partials/appHome.html',
             controller: 'appHomeCtrl'
         })
-        // .when('/card', {
-        //     templateUrl: 'partials/card.html',
-        //     controller: 'imageCardCtrl'
+        // .when('/cardList', {
+        //     templateUrl: 'partials/cardList.html',
+        //     controller: 'cardListCtrl'
         // })
-
-        // .when('/login', {
-        //     templateUrl: 'partials/navbar.html',
-        //     controller: 'navbarCtrl',
-        //     resolve: {isAuth}
-    
-        // .when('/login', {
-        //     templateUrl: 'partials/buttons.html',
-        //     controller: 'buttonsCtrl',
-        //     resolve: {isAuth}
-        // })
-        // .when('/myImages', {
-        //     templateUrl: 'partials/userProfile.html.html',
-        //     controller: 'profileController',
-        //     resolve: {isAuth}
-    
-        // })
-        // .when('/task/:itemId', {
-        //     templateUrl: 'partials/details.html',
-        //     controller: 'detailTaskCtrl',
-        //     resolve: {isAuth}
     
         // })
         // .when('/logout', {

@@ -11,9 +11,9 @@
 
 //     const showTask = function(){
 //         cardFactory.getSingleTask($routeParams.itemId)
-//             .then(task=> {
-//                 vm.task = task;
-//                 vm.task.id = $routeParams.itemId;
+//             .then(card=> {
+//                 vm.card = task;
+//                 vm.card.id = $routeParams.itemId;
 //             });
 //     }();
 // });
