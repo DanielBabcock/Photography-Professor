@@ -1,72 +1,284 @@
 [
     {
-        "image": "0",
-        "shutterSpeed": "1/13",
+        "image": "images/0.jpg",
+        "shutterSpeed": "/",
         "aperture": "2.8",
-        "iso": "320",
-        "location": "images/0.jpg",
-        "imageNotes": "Shallow depth of field, slow shutter speed, and low grain ISO.",
-        "exposure": "-2",
-        "userNotes": []
-    },
-    {
-        "image": "0",
-        "shutterSpeed": "1/13",
-        "aperture": "2.8",
-        "iso": "1000",
+        "iso": "+2",
         "location": "images/0.jpg",
         "imageNotes": "",
-        "exposure": "-1",
+        "exposure": "0",
         "userNotes": []
     },
     {
-        "image": "1",
-        "shutterSpeed": "1/60",
+        "image": "images/1.jpg",
+        "shutterSpeed": "/",
         "aperture": "2.8",
-        "iso": "400",
+        "iso": "0",
         "location": "images/1.jpg",
         "imageNotes": "",
         "exposure": "0",
         "userNotes": []
     },
     {
-        "image": "0",
-        "shutterSpeed": "1/13",
+        "image": "images/2.jpg",
+        "shutterSpeed": "/",
         "aperture": "2.8",
-        "iso": "500",
-        "location": "images/0.jpg",
-        "imageNotes": "",
-        "exposure": "+1",
-        "userNotes": []
-    },
-    {
-        "image": "2",
-        "shutterSpeed": "1/100",
-        "aperture": "2.8",
-        "iso": "50",
+        "iso": "-2",
         "location": "images/2.jpg",
-        "imageNotes": "Very low ISO",
-        "exposure": "+2",
+        "imageNotes": "",
+        "exposure": "0",
         "userNotes": []
     },
     {
-        "image": "3",
-        "shutterSpeed": "1/20",
+        "image": "images/3.jpg",
+        "shutterSpeed": "/",
         "aperture": "2.8",
-        "iso": "50",
+        "iso": "0",
         "location": "images/3.jpg",
-        "imageNotes": "Slow shutter, very low ISO",
-        "exposure": "-2",
+        "imageNotes": "",
+        "exposure": "0",
         "userNotes": []
     },
     {
-        "image": "4",
-        "shutterSpeed": "1/2000"  ,      
-        "aperture": "2.8" ,
-        "iso": "800",
+        "image": "images/4.jpg",
+        "shutterSpeed": "/",
+        "aperture": "2.8",
+        "iso": "0",
         "location": "images/4.jpg",
-        "imageNotes": "fast shutter.",
-        "exposure": "-2",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/5.jpg",
+        "shutterSpeed": "/",
+        "aperture": "2.8",
+        "iso": "0",
+        "location": "images/5.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/6.jpg",
+        "shutterSpeed": "/",
+        "aperture": "2.8",
+        "iso": "0",
+        "location": "images/6.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/7.jpg",
+        "shutterSpeed": "/",
+        "aperture": "2.8",
+        "iso": "0",
+        "location": "images/7.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/8.jpg",
+        "shutterSpeed": "/",
+        "aperture": "2.8",
+        "iso": "0",
+        "location": "images/8.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/9.jpg",
+        "shutterSpeed": "/",
+        "aperture": "5.6",
+        "iso": "0",
+        "location": "images/9.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/10.jpg",
+        "shutterSpeed": "/",
+        "aperture": "5.6",
+        "iso": "0",
+        "location": "images/10.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/11.jpg",
+        "shutterSpeed": "/",
+        "aperture": "5.6",
+        "iso": "0",
+        "location": "images/11.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/12.jpg",
+        "shutterSpeed": "/",
+        "aperture": "5.6",
+        "iso": "0",
+        "location": "images/12.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/13.jpg",
+        "shutterSpeed": "/",
+        "aperture": "5.6",
+        "iso": "0",
+        "location": "images/13.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/14.jpg",
+        "shutterSpeed": "/",
+        "aperture": "5.6",
+        "iso": "0",
+        "location": "images/14.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/15.jpg",
+        "shutterSpeed": "/",
+        "aperture": "5.6",
+        "iso": "0",
+        "location": "images/15.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/16.jpg",
+        "shutterSpeed": "/",
+        "aperture": "5.6",
+        "iso": "0",
+        "location": "images/16.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/17.jpg",
+        "shutterSpeed": "/",
+        "aperture": "5.6",
+        "iso": "0",
+        "location": "images/17.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/18.jpg",
+        "shutterSpeed": "/",
+        "aperture": "11",
+        "iso": "0",
+        "location": "images/18.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/19.jpg",
+        "shutterSpeed": "/",
+        "aperture": "11",
+        "iso": "0",
+        "location": "images/19.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/20.jpg",
+        "shutterSpeed": "/",
+        "aperture": "11",
+        "iso": "0",
+        "location": "images/20.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/21.jpg",
+        "shutterSpeed": "/",
+        "aperture": "11",
+        "iso": "0",
+        "location": "images/21.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/22.jpg",
+        "shutterSpeed": "/",
+        "aperture": "11",
+        "iso": "0",
+        "location": "images/22.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/23.jpg",
+        "shutterSpeed": "/",
+        "aperture": "11",
+        "iso": "0",
+        "location": "images/23.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/24.jpg",
+        "shutterSpeed": "/",
+        "aperture": "11",
+        "iso": "0",
+        "location": "images/24.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/25.jpg",
+        "shutterSpeed": "/",
+        "aperture": "11",
+        "iso": "0",
+        "location": "images/25.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/26.jpg",
+        "shutterSpeed": "/",
+        "aperture": "11",
+        "iso": "0",
+        "location": "images/26.jpg",
+        "imageNotes": "",
+        "exposure": "0",
+        "userNotes": []
+    },
+    {
+        "image": "images/27.jpg",
+        "shutterSpeed": "/",
+        "aperture": "11",
+        "iso": "0",
+        "location": "images/27.jpg",
+        "imageNotes": "",
+        "exposure": "0",
         "userNotes": []
     }
+    
 ]
+

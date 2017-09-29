@@ -6,7 +6,7 @@
  */
 // $q is A service that helps you run functions asynchronously, and use their return values (or exceptions) when they are done processing.
 // The $http service is a function which takes a single argument — a configuration object — that is used to generate an HTTP request and returns a promise.
-app.factory("welcomeFactory", function($q, $http){
+app.factory("welcomeFactory", function($q, $http, FBCreds){
 
     // default to null, checked and updated onAuthStateChanged
     // and used throughout the application to check if there is a current user
@@ -28,8 +28,11 @@ app.factory("welcomeFactory", function($q, $http){
             firebase.auth().onAuthStateChanged(user => {
                 if (user){
                     currentUser = user.uid;
+                    console.log("UID: ", user.uid);
                     resolve(true);
-                }else {
+
+                }
+                else {
                     reject(false);
                 }
             });

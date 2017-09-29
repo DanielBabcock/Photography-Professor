@@ -1,14 +1,21 @@
 "use strict";
 
+// **********************************************
+//     Controls: Image dummy JSON, then sliders,
+//         then shutter click to create cards, then 
+//         delete button for cards. 
+// **********************************************
+
+
 // $scope.firebase = $firebase(new Firebase("https://photo-tutor.firebaseio.com/"));
 
-app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $location, cardFactory){
+app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, welcomeFactory){
     
     // console.log("app: ");
 
     const settingsArray = [];
     const repeatLoop = [];
-
+    let currentUser = welcomeFactory.getCurrentUser();
 
     const imageData = [
         {
@@ -19,7 +26,8 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "location": "images/0.jpg",
             "imageNotes": "Shallow depth of field, slow shutter speed, and low grain ISO.",
             "exposure": "-2",
-            "userNotes": []
+            "userNotes": [],
+            "uid": currentUser
         },
         {
             "image": "images/1.jpg",
@@ -27,9 +35,11 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "aperture": "2.8",
             "iso": "400",
             "location": "images/1.jpg",
-            "imageNotes": "",
+            "imageNotes": "blah blah",
             "exposure": "0",
-            "userNotes": []
+            "userNotes": [],
+            "uid": currentUser
+            
         },
         {
             "image": "images/2.jpg",
@@ -37,9 +47,10 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "aperture": "2.8",
             "iso": "500",
             "location": "images/0.jpg",
-            "imageNotes": "",
+            "imageNotes": "blah blah",
             "exposure": "+1",
-            "userNotes": []
+            "userNotes": [],
+            "uid": currentUser
         },
         {
             "image": "images/3.jpg",
@@ -49,10 +60,11 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             "location": "images/2.jpg",
             "imageNotes": "Very low ISO",
             "exposure": "+2",
-            "userNotes": []
+            "userNotes": [],
+            "uid": currentUser
         },
     ];
-
+    
     // **********************************************************************
     // ****************************SLIDER************************************
     // **********************************************************************
@@ -64,11 +76,11 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             showTicksValues: true,
             showSelectionBar: true,
             stepsArray: [
-              {value: "2.8", legend: 'Very shallow'},
-              {value: "4", legend: 'Shallow'},
-              {value: "5.6", legend: 'Average'},
-              {value: "11", legend: 'Deep'},
-              {value: "16", legend: 'Very deep'}
+              {value: "2.8", legend: ''},
+              {value: "4", legend: ''},
+              {value: "5.6", legend: ''},
+              {value: "11", legend: ''},
+              {value: "16", legend: ''}
             ],
 
             id: 'aperture-id',
@@ -108,11 +120,11 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             showTicksValues: true,
             showSelectionBar: true,
             stepsArray: [
-              {value: "1/13", legend: 'Slow'},
-              {value: "1/20", legend: 'Less Slow'},
-              {value: "1/60", legend: 'less slow'},
-              {value: "1/100", legend: 'avg'},
-              {value: "1/2000", legend: 'Fast'}
+              {value: "1/13", legend: ''},
+              {value: "1/20", legend: ''},
+              {value: "1/60", legend: ''},
+              {value: "1/100", legend: ''},
+              {value: "1/2000", legend: ''}
             ],
             id: 'shutter-id',
             // API Call here
@@ -140,7 +152,7 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
 
                 // scope slider to available ISOs
                 $scope.isoSlider.options.stepsArray = allowedISO;
-        
+
             }
         }
     };
@@ -151,12 +163,12 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             showTicksValues: true,
             showSelectionBar: true,
             stepsArray: [
-              {value: "50", legend: 'low grain'},
-              {value: "100", legend: 'low grain'},
-              {value: "320", legend: 'some noise'},
-              {value: "400", legend: 'some noise'},
-              {value: "800", legend: 'more noise'},
-              {value: "1000", legend: 'high grain'}
+              {value: "50", legend: ''},
+              {value: "100", legend: ''},
+              {value: "320", legend: ''},
+              {value: "400", legend: ''},
+              {value: "800", legend: ''},
+              {value: "1000", legend: ''}
             ],
 
             id: 'iso-id',
@@ -166,10 +178,9 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
                 // passing info to empty array
                 settingsArray.splice(2, 1, $scope.isoSlider.value);
                 // console.log("settingsArray:", settingsArray);
-
             }
-            }
-        };
+        }
+    };
         
     // Shutter button function here. It passes selected settings 
         // from the above filters to the imageCardFactory/imageCardController
@@ -194,7 +205,15 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
                     repeatLoop.push(imageLoop);
                     $scope.repeatLoop = repeatLoop;
 
-                    // console.log("repeatLoop: ", repeatLoop);
+                    // call factory function/method to firebase
+                    console.log("imageLoop: ", imageLoop);
+                    
+                    console.log("repeatLoop: ", repeatLoop);
+
+                        // sends to cardsFactory.
+                    console.log("shutterClickFunction currentUser: ", currentUser);
+                        
+                    cardFactory.createCards(imageLoop, currentUser);
                 }       
             });
 
@@ -206,7 +225,11 @@ app.controller("appHomeCtrl", function($scope, $window, appHomeFactory, $locatio
             $scope.repeatLoop.splice(item, 1);
             repeatLoop.splice(item, 0);
             console.log("item: ", item);
+
+            cardFactory.deleteCards();
         };
+
+       
 });
 
 
