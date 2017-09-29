@@ -17,53 +17,6 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
     const repeatLoop = [];
     let currentUser = welcomeFactory.getCurrentUser();
 
-    const imageData = [
-        {
-            "image": "images/0.jpg",
-            "shutterSpeed": "1/13",
-            "aperture": "2.8",
-            "iso": "320",
-            "location": "images/0.jpg",
-            "imageNotes": "Shallow depth of field, slow shutter speed, and low grain ISO.",
-            "exposure": "-2",
-            "userNotes": [],
-            "uid": currentUser
-        },
-        {
-            "image": "images/1.jpg",
-            "shutterSpeed": "1/60",
-            "aperture": "2.8",
-            "iso": "400",
-            "location": "images/1.jpg",
-            "imageNotes": "blah blah",
-            "exposure": "0",
-            "userNotes": [],
-            "uid": currentUser
-            
-        },
-        {
-            "image": "images/2.jpg",
-            "shutterSpeed": "1/13",
-            "aperture": "2.8",
-            "iso": "500",
-            "location": "images/0.jpg",
-            "imageNotes": "blah blah",
-            "exposure": "+1",
-            "userNotes": [],
-            "uid": currentUser
-        },
-        {
-            "image": "images/3.jpg",
-            "shutterSpeed": "1/100",
-            "aperture": "2.8",
-            "iso": "50",
-            "location": "images/2.jpg",
-            "imageNotes": "Very low ISO",
-            "exposure": "+2",
-            "userNotes": [],
-            "uid": currentUser
-        },
-    ];
     
     // **********************************************************************
     // ****************************SLIDER************************************
@@ -158,7 +111,6 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
     };
 
     $scope.isoSlider = {
-        // value: 6400,
         options: {
             showTicksValues: true,
             showSelectionBar: true,
@@ -182,54 +134,111 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
         }
     };
         
-    // Shutter button function here. It passes selected settings 
-        // from the above filters to the imageCardFactory/imageCardController
-        // and outputs the corresponding image from database to the card.html
-        // as a card.
-        // This is what is in the partial/appHome.html 
-        // <input ng-click="shutterClickFunction()" type="image" 
-        // src="images/shutterBtn.jpeg" alt="Submit">
-        
-        // $scope.count = 0;
+    // **********************************************************************
+    // ****************************SHUTTER BUTTON FUNCTION*******************
+    // **********************************************************************
 
+    // Shutter button function here. It passes selected settings 
+        // from the above filters to the CardFactory
+        // and outputs the corresponding image from data(later database) to the appHome.html
+        // as a card. cardFactory sends it to Firebase.
+        
         $scope.shutterClickFunction = function() {
             
             imageData.forEach(function(imageLoop){
                 if(imageLoop.aperture === settingsArray[0] && 
                     imageLoop.shutterSpeed === settingsArray[1] && 
                     imageLoop.iso === settingsArray[2]){
-                     // do this
-                    $scope.imageLoop = imageLoop.image;
-                    // console.log("imageLoop: ", imageLoop);
-                    
+                    $scope.imageLoop = imageLoop.image;                    
                     repeatLoop.push(imageLoop);
                     $scope.repeatLoop = repeatLoop;
 
                     // call factory function/method to firebase
-                    console.log("imageLoop: ", imageLoop);
-                    
-                    console.log("repeatLoop: ", repeatLoop);
-
-                        // sends to cardsFactory.
-                    console.log("shutterClickFunction currentUser: ", currentUser);
-                        
+                    // console.log("imageLoop: ", imageLoop);                  
+                    // console.log("repeatLoop: ", repeatLoop);
+                    console.log("shutterClickFunction currentUser: ", currentUser);     
                     cardFactory.createCards(imageLoop, currentUser);
                 }       
             });
-
-            console.log("shutter was clicked: ");
         };
 
-        // delete card function
+    // **********************************************************************
+    // ****************************DELETE CARDS******************************
+    // **********************************************************************
+
+    // deleteCardFunction deletes current session created cards and calls the 
+        // deleteCards function in cardFactory which deletes corresponding 
+        // card-data from Firebase.
+    // deleteUserCards is for deleteing old user cards called from Firebase that 
+        // created during previous sessions but are appearing alongside new cards.
+
         $scope.deleteCardFunction = function(item){
             $scope.repeatLoop.splice(item, 1);
             repeatLoop.splice(item, 0);
-            console.log("item: ", item);
+            console.log("item: deleteCardFunction ", item);
 
             cardFactory.deleteCards();
         };
 
+        $scope.deleteUserCards = function(){
+            console.log("deleteUserCards: ");
+            cardFactory.deleteCards();
+            
+        }
+
+    // **********************************************************************
+    // ****************************TEMPORARY IMAGE DATA**********************
+    // **********************************************************************
        
+        const imageData = [
+            {
+                "image": "images/0.jpg",
+                "shutterSpeed": "1/13",
+                "aperture": "2.8",
+                "iso": "320",
+                "location": "images/0.jpg",
+                "imageNotes": "Shallow depth of field, slow shutter speed, and low grain ISO.",
+                "exposure": "-2",
+                "userNotes": [],
+                "uid": currentUser
+            },
+            {
+                "image": "images/1.jpg",
+                "shutterSpeed": "1/60",
+                "aperture": "2.8",
+                "iso": "400",
+                "location": "images/1.jpg",
+                "imageNotes": "blah blah",
+                "exposure": "0",
+                "userNotes": [],
+                "uid": currentUser
+                
+            },
+            {
+                "image": "images/2.jpg",
+                "shutterSpeed": "1/13",
+                "aperture": "2.8",
+                "iso": "500",
+                "location": "images/0.jpg",
+                "imageNotes": "blah blah",
+                "exposure": "+1",
+                "userNotes": [],
+                "uid": currentUser
+            },
+            {
+                "image": "images/3.jpg",
+                "shutterSpeed": "1/100",
+                "aperture": "2.8",
+                "iso": "50",
+                "location": "images/2.jpg",
+                "imageNotes": "Very low ISO",
+                "exposure": "+2",
+                "userNotes": [],
+                "uid": currentUser
+            },
+        ];
+        
+
 });
 
 

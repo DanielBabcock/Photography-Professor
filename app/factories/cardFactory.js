@@ -30,7 +30,7 @@ app.factory("cardFactory", function($q, $http, FBCreds, welcomeFactory){
         // firebase returns an object of objects,
         // so we pass that to makeArray, a helper defined above
         getAllCards : function(user){
-                console.log("user", user);
+                console.log("user getAllCards cardFactory", user);
             return $q((resolve, reject)=>{
                 $http.get(`${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${currentUser}"`)
                 .then(items => {

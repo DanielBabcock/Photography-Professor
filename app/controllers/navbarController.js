@@ -45,9 +45,9 @@ app.controller("navCtrl", function($scope, $window, $rootScope, cardFactory, wel
                   vm.$apply();
                   cardFactory.getAllCards()
                   .then((results)=>{
-                    console.log("results navbarctrl: ", results);
+                    console.log("results navbarCtrl: ", results);
                   });
-                  console.log("loginGoogle at navbarCtrl", result.user.uid);
+                    console.log("loginGoogle navbarCtrl", result.user.uid);
               })
                 
               .catch(error => console.log("google login error", error.message, error.code));
