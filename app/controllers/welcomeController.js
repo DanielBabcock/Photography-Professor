@@ -17,11 +17,6 @@ app.controller("welcomeCtrl", function($scope, $window, cardFactory, welcomeFact
     //     .then( (allCards) => {
     //         console.log("allCards", allCards);
     //     })
-    
-
-
-
-
 
 
 });

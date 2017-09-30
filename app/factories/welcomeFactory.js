@@ -23,14 +23,16 @@ app.factory("welcomeFactory", function($q, $http, FBCreds){
     // they will be injected when the controller is instantiated, 
     // and are available to $scope in that controller under $resolve.
     // else a $routeChangeError will be fired
+
+    // isAuthenticated called from welcomeController
     const isAuthenticated = function (){
         return new Promise ((resolve, reject) => {
             firebase.auth().onAuthStateChanged(user => {
                 if (user){
                     currentUser = user.uid;
-                    console.log("UID: ", user.uid);
+                        console.log("UID: ", user.uid);
+                        console.log('user auth currentUser', currentUser);
                     resolve(true);
-
                 }
                 else {
                     reject(false);
@@ -43,18 +45,14 @@ app.factory("welcomeFactory", function($q, $http, FBCreds){
         return currentUser;
     };
 
-
-    
     const logIn = function(user){
         return firebase.auth()
                        .signInWithEmailAndPassword(user.email, user.password);
     };
 
-
     const logOut = function(){
         return firebase.auth().signOut();
     };
-
 
     // this takes an object created in the controller
     // which has an email and password from the form data
@@ -69,14 +67,12 @@ app.factory("welcomeFactory", function($q, $http, FBCreds){
     };
 
     return {
-
         getCurrentUser,
         logIn,
         logOut,
         register,
         isAuthenticated,
         authWithProvider
-        
     };
 
 });
