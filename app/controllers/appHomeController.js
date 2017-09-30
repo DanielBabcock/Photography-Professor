@@ -13,13 +13,17 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
     let currentUser = "99IhzrNCXHZ59ORbpioT4zOxg083";
     $scope.cardSource =[];
 
-    cardFactory.getAllCards(currentUser)
+
+
+
+    let getCards = function(){
+        cardFactory.getAllCards(currentUser)
         .then( (response) => {
             console.log("repsonse apphome", response);
             $scope.cardSource = response;
         });
     console.log("cardsource apphome", $scope.cardSource);
-    
+    };
 
     // **********************************************************************
     // ****************************TEMPORARY IMAGE DATA**********************
@@ -184,24 +188,15 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
     // **********************************************************************
     // ****************************DELETE CARDS******************************
     // **********************************************************************
-
-    // deleteCardFunction deletes current session created cards and calls the 
-        // deleteCards function in cardFactory which deletes corresponding 
-        // card-data from Firebase.
-    // deleteUserCards is for deleting old user cards called from Firebase that 
-        // created during previous sessions but are appearing alongside new cards.
-
-        $scope.deleteCardFunction = function(item){
-            $scope.repeatLoop.splice(item, 1);
-            repeatLoop.splice(item, 0);
-            console.log("item: deleteCardFunction ", item);
-            cardFactory.deleteCards();
-        };
-
-        $scope.deleteUserCards = function(){
-            console.log("deleteUserCards: ");
-            cardFactory.deleteCards();   
-        };
+            
+        $scope.deleteCard = function(cardId){
+                cardFactory.deleteCard(cardId);   
+                getCards();           
+            };
         
-
+        // $scope.deleteUserCards = function(){
+        //     console.log("deleteUserCards: ");
+        //     cardFactory.deleteCard();
+        // };
+        getCards();
 });

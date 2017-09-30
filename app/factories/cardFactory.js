@@ -9,6 +9,7 @@ app.factory("cardFactory", function($q, $http, FBCreds, welcomeFactory){
     const url = FBCreds.databaseURL;
     let currentUser = welcomeFactory.getCurrentUser();
     
+    
     return {
 
     // helper function to process the firebase object
@@ -36,12 +37,13 @@ app.factory("cardFactory", function($q, $http, FBCreds, welcomeFactory){
             return $q((resolve, reject)=>{
                 $http.get(`${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${user}"`)
                 .then(items => {
-                    console.log("itemsin .get: ", items);  
+                    console.log("items in .get: ", items);  
                     Object.keys(items.data).forEach( (key) => {
+                        items.data[key].cardId = key;
                         emptyArray.push(items.data[key]);
                     });                  
                     resolve(emptyArray);
-            })
+                })
                     .catch(error => reject(error));
             });
         },
@@ -70,12 +72,18 @@ app.factory("cardFactory", function($q, $http, FBCreds, welcomeFactory){
         //deleteUserCards functions.
         // takes an id and deletes the corresponding card from the database
 
-        deleteCards : function(id){
+        deleteCard : function(id){
             return $q((resolve,reject)=>{
                 $http.delete(`${url}/items/${id}.json`)
-                    .then(response => resolve(response))
+                    .then( (response) => {
+                        resolve(response); 
+                    })
                     .catch(error => reject(error));
+
             });
         }
     };
+
+
+
 });
