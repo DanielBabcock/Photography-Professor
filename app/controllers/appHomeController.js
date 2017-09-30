@@ -10,10 +10,15 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
     
     const settingsArray = [];
     const repeatLoop = [];
-    let currentUser = welcomeFactory.getCurrentUser();
-    
-    let cardSource = cardFactory.getAllCards(currentUser);
-    console.log("cardsource apphome", cardSource);
+    let currentUser = "99IhzrNCXHZ59ORbpioT4zOxg083";
+    $scope.cardSource =[];
+
+    cardFactory.getAllCards(currentUser)
+        .then( (response) => {
+            console.log("repsonse apphome", response);
+            $scope.cardSource = response;
+        });
+    console.log("cardsource apphome", $scope.cardSource);
     
 
     // **********************************************************************

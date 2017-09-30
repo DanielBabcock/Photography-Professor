@@ -23,7 +23,7 @@ app.controller("navCtrl", function($scope, $window, $rootScope, cardFactory, wel
                   user = result.user.uid;
                     console.log("navbar user", user);
                   $location.path('/appHome');
-                  vm.$apply()
+                  vm.$apply();
               })     
               .catch(error => console.log("google login error", error.message, error.code));
       };

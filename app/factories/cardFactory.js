@@ -30,14 +30,17 @@ app.factory("cardFactory", function($q, $http, FBCreds, welcomeFactory){
         // so we pass that to makeArray, a helper defined above
 
         getAllCards : function(user){
-                    console.log("user getAllCards", user);
+            console.log("user getAllCards", user);
+            let emptyArray = [];
+
             return $q((resolve, reject)=>{
                 $http.get(`${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${user}"`)
-
-                // $http.get(`${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${user}"`)
                 .then(items => {
-                    console.log("itemsin .get: ", items);                    
-                    resolve(items.data);
+                    console.log("itemsin .get: ", items);  
+                    Object.keys(items.data).forEach( (key) => {
+                        emptyArray.push(items.data[key]);
+                    });                  
+                    resolve(emptyArray);
             })
                     .catch(error => reject(error));
             });

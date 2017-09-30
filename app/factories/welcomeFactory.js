@@ -31,7 +31,7 @@ app.factory("welcomeFactory", function($q, $http, FBCreds){
                 if (user){
                     currentUser = user.uid;
                         console.log("UID: ", user.uid);
-                        console.log('user auth current user', currentUser);
+                        console.log('user auth currentUser', currentUser);
                     resolve(true);
                 }
                 else {

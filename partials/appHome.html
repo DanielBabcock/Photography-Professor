@@ -3,7 +3,6 @@
 // ********************************************** -->
 
 <div  class="container container--auth">
-        <!-- onload="getAllCards()" -->
 
     <!-- **********************************************************************
     ****************************Scene************************************
@@ -85,19 +84,16 @@
     <!-- **********************************************************************
     ****************************ALL FIREBASE Cards************************************
     ********************************************************************** -->
-    <div ng-controller="navCtrl" class="getContainer" ng-repeat="items in cards">
+    <div class="getContainer" ng-repeat="items in cardSource">
         <div class="allUserCards">
         <!-- Users Image -->
-            <img ng-src="{{image.image}}" class="allUserImage">
+            <img ng-src="{{items.image}}" class="allUserImage">
             
             <div class="notes">
                 <div class="allImageNotes">
-                        <!-- Image Notes:  -->
-                    <p>{{items.user}}</p>                        
-                    <p>{{items.currentUser}}</p>                        
-                        
-                    <p>{{items.uid}}</p>                        
-                    <p>{{items.aperture}}</p>
+                        <!-- Image Notes:  -->                     
+                                          
+                    <p>Aperture: {{items.aperture}}</p>
                     <p>{{items.shutterSpeed}}</p>
                     <p>{{items.iso}}</p>
                     <p>{{items.exposure}}</p>
