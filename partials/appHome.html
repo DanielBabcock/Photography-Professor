@@ -53,16 +53,16 @@
     <!-- **********************************************************************
     ****************************image cards************************************
     ********************************************************************** -->
-    <div class="container" ng-repeat="(index, image) in repeatLoop">
-        <div class="newUserCards">
+    <!-- <div class="container" ng-repeat="(index, image) in repeatLoop">
+        <div class="newUserCards"> -->
         <!-- Users Image -->
-            <img ng-model="image.image" ng-src="{{image.image}}" class="userImage">
+            <!-- <img ng-model="image.image" ng-src="{{image.image}}" class="userImage">
             
             <div class="notes">
                 <div class="imageNotes">
                         Image Notes: 
                     <p ng-model="imageNotes.imageNotes" ng-src="{{imageNotes.imageNotes}}"></p>
-                </div>
+                </div> -->
                     
                     <!-- USER ADDED NOTES -->
                 <!-- <div>
@@ -70,15 +70,15 @@
                     <input type="text">
                     <p ng-model="image.userNotes" ng-src="{{image.userNotes}}"></p>
                 </div> -->
-            </div> 
+            <!-- </div>  -->
                 
                 <!-- KEEP/DELETE BUTTONS -->
-            <div class"cardBtns">
+            <!-- <div class"cardBtns"> -->
                 <!-- <button class="keepItBtn" ng-click="()">Keep</button> -->
-                <button id="deleteBtn" ng-click="deleteCardFunction(index)">Delete</button>
+                <!-- <button class="deleteBtn" ng-click="deleteCard(items.cardId)">Delete</button>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- **********************************************************************
@@ -111,7 +111,9 @@
                 <!-- KEEP/DELETE BUTTONS -->
             <div class"cardBtns">
                 <!-- <button class="keepItBtn" ng-click="()">Keep</button> -->
-                <button id="deleteBtn" ng-click="deleteUserCards(index)">
+                <button class="deleteBtn" ng-click="deleteCard(items.cardId)">
+                        
+                <!-- <button id="deleteBtn" ng-click="deleteCard({{items.cardId}})"> -->
                     Delete
                 </button>
             </div>
