@@ -173,14 +173,15 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
                     {
                         imageLoop.uid = currentUser;
                         $scope.imageLoop = imageLoop.image;                    
-                        repeatLoop.push(imageLoop);
-                        $scope.repeatLoop = repeatLoop;
+                        // repeatLoop.push(imageLoop);
+                        // $scope.repeatLoop = repeatLoop;
 
                     // call factory function/method to firebase
                         console.log("imageLoop: ", imageLoop);                  
                         console.log("repeatLoop: ", repeatLoop);
                         console.log("shutterClickFunction currentUser: ", currentUser);     
                         cardFactory.createCards(imageLoop, currentUser);
+                        getCards();
                 }       
             });
         };
