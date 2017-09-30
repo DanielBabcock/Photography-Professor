@@ -85,15 +85,23 @@
     <!-- **********************************************************************
     ****************************ALL FIREBASE Cards************************************
     ********************************************************************** -->
-    <div class="getContainer" ng-repeat="(index, image) in repeatLoop">
+    <div ng-controller="navCtrl" class="getContainer" ng-repeat="items in cards">
         <div class="allUserCards">
         <!-- Users Image -->
-            <img ng-src="{{}}" class="allUserImage">
+            <img ng-src="{{image.image}}" class="allUserImage">
             
             <div class="notes">
                 <div class="allImageNotes">
                         <!-- Image Notes:  -->
-                    <p ng-src="{{}}"></p>
+                    <p>{{items.user}}</p>                        
+                    <p>{{items.currentUser}}</p>                        
+                        
+                    <p>{{items.uid}}</p>                        
+                    <p>{{items.aperture}}</p>
+                    <p>{{items.shutterSpeed}}</p>
+                    <p>{{items.iso}}</p>
+                    <p>{{items.exposure}}</p>
+                    <p>{{items.imageNotes}}</p>
                 </div>
                     
                     <!-- USER ADDED NOTES -->
@@ -108,7 +116,7 @@
             <div class"cardBtns">
                 <!-- <button class="keepItBtn" ng-click="()">Keep</button> -->
                 <button id="deleteBtn" ng-click="deleteUserCards(index)">
-                    <!-- Delete -->
+                    Delete
                 </button>
             </div>
         </div>
