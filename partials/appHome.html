@@ -51,38 +51,7 @@
     <br>
 
     <!-- **********************************************************************
-    ****************************image cards************************************
-    ********************************************************************** -->
-    <!-- <div class="container" ng-repeat="(index, image) in repeatLoop">
-        <div class="newUserCards"> -->
-        <!-- Users Image -->
-            <!-- <img ng-model="image.image" ng-src="{{image.image}}" class="userImage">
-            
-            <div class="notes">
-                <div class="imageNotes">
-                        Image Notes: 
-                    <p ng-model="imageNotes.imageNotes" ng-src="{{imageNotes.imageNotes}}"></p>
-                </div> -->
-                    
-                    <!-- USER ADDED NOTES -->
-                <!-- <div>
-                        User Notes: 
-                    <input type="text">
-                    <p ng-model="image.userNotes" ng-src="{{image.userNotes}}"></p>
-                </div> -->
-            <!-- </div>  -->
-                
-                <!-- KEEP/DELETE BUTTONS -->
-            <!-- <div class"cardBtns"> -->
-                <!-- <button class="keepItBtn" ng-click="()">Keep</button> -->
-                <!-- <button class="deleteBtn" ng-click="deleteCard(items.cardId)">Delete</button>
-            </div>
-        </div>
-    </div> -->
-
-
-    <!-- **********************************************************************
-    ****************************ALL FIREBASE Cards************************************
+    ****************************FIREBASE Cards*********************************
     ********************************************************************** -->
     <div class="getContainer" ng-repeat="items in cardSource">
         <div class="allUserCards">
@@ -93,11 +62,11 @@
                 <div class="allImageNotes">
                         <!-- Image Notes:  -->                     
                                           
-                    <p>Aperture: {{items.aperture}}</p>
-                    <p>{{items.shutterSpeed}}</p>
-                    <p>{{items.iso}}</p>
-                    <p>{{items.exposure}}</p>
-                    <p>{{items.imageNotes}}</p>
+                    <p>ƒ: {{items.aperture}}</p>
+                    <p>Shutter Speed: {{items.shutterSpeed}}</p>
+                    <p>ISO: {{items.iso}}</p>
+                    <!-- <p>{{items.exposure}}</p> -->
+                    <!-- <p>{{items.imageNotes}}</p> -->
                 </div>
                     
                     <!-- USER ADDED NOTES -->

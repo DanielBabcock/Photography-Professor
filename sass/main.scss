@@ -1,10 +1,27 @@
-$lobster: bisque;
-$accent: red;
-$white: #ffffff;
-$darkaccent: #7a0303;
+$cream: #BBBBBD;
+$x: #77fee7;
+$b: #ffdf72;
+$y: #cbaacc;
+$c: #b062b2;
+
+nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    li { display: inline-block; }
+  
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+  }
 
 body{
-    background-color: $lobster;
+    background-color: $cream;
 }
 
 h1 {
@@ -12,54 +29,21 @@ h1 {
 }
 
 .navbar-default {
-    background-color: $accent;
-}
-.navbar-default .navbar-brand {
-    color: $white;
-}
-.navbar-default .navbar-nav>li>a {
-    color: $white;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: $white;
-}
-.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-    background-color: $darkaccent;
+    background-color: $x;
 }
 
 .btn-info {
-    color: $white;
-    background-color: $accent;
+    color: $x;
+    background-color: $x;
     border-color: #46b8da;
 }
 .main-container {
-    border: 2px dashed $accent;
+    border: 2px dashed $x;
 }
-
-.search-bar-spacing{
-    margin-bottom: 20px;
-}
-
 .container--auth {
   background-color: white;
   padding: 20px;
   margin-top: 40px;
   border-radius: 10px;
   border: 2px solid #ccc;
-}
-
-.search-bar-spacing {
-  margin-bottom: 20px;
-}
-
-.title-bar {
-  font-weight: bold; 
-}
-
-.form--demo {
-  background-color: white;
-  border: 2px solid #ccc;
-  margin-top: 40px;
-  padding: 20px;
-  border-radius: 10px;
 }
