@@ -2,58 +2,52 @@
 //     Controls: Gif Scene, buttons, cards. 
 // ********************************************** -->
 
-<div  class="container container--auth">
+<div  class="container">
 
     <!-- **********************************************************************
     ****************************Scene************************************
     ********************************************************************** -->
-    <div class="col-xs-9">
-        <img src="images/scene.gif">
+    <!-- <div class="col-md-6"> -->
+    <div col-md-12 col-xs-12>
+        <img class="gif" src="images/scene.gif">
     </div>
 
     <!-- **********************************************************************
     ****************************SLIDERs************************************
     ********************************************************************** -->
     
-        <div>
-        Aperture
+        <!-- <div class="col-md-6"> -->
+        <div class="col-md-11 col-xs-12">
+        Aperture:
                 <rzslider rz-slider-model="apertureSlider.value"
             rz-slider-options="apertureSlider.options"></rzslider>
             <br>
-            <br>
-            <br>
-            <br>
-            Shutter Speed
+   
+            Shutter Speed:
                 <rzslider rz-slider-model="shutterSpeedSlider.value"
             rz-slider-options="shutterSpeedSlider.options"></rzslider>
             <br>
-            <br>
-            <br>
-            <br>
-            ISO
+   
+            ISO:
                 <rzslider rz-slider-model="isoSlider.value"
             rz-slider-options="isoSlider.options"></rzslider>  
         </div>
     <!-- **********************************************************************
     ****************************SHUTTER Btn************************************
     ********************************************************************** -->
-    <br>
-    <br>
-    <br>
-    <br>
+
+   
     <div>
-        <button id="shutterBtn" ng-click="shutterClickFunction()" type="image" src="images/shutterBtn.jpeg" alt="Submit">
+        <button class="col-md-1 col-xs-12" id="shutterBtn" ng-click="shutterClickFunction()" type="image" src="images/shutterBtn.jpeg" alt="Submit">
             {{submitButtonText}}Shutter Button</button>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
+   
+
 
     <!-- **********************************************************************
     ****************************FIREBASE Cards*********************************
     ********************************************************************** -->
-    <div class="getContainer" ng-repeat="items in cardSource">
+    <div id="cardsMasterDiv" class="col-md-6 col-xs-12" ng-repeat="items in cardSource">
         <div class="allUserCards">
         <!-- Users Image -->
             <img ng-src="{{items.image}}" class="allUserImage">
@@ -88,5 +82,9 @@
             </div>
         </div>
     </div>
+
+    <p>&copy; 2017 Daniel Babcock.</p>
     
 </div>
+
+

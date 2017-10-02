@@ -1,49 +1,102 @@
-$cream: #BBBBBD;
-$x: #77fee7;
-$b: #ffdf72;
-$y: #cbaacc;
-$c: #b062b2;
+$white: #FFFFFF;
+$sky: rgba(58, 232, 245, 0.74);
+
+html {
+    background-color: $white;
+    
+}
+body{
+    background-color: $white;
+    font-family: 'Encode Sans Expanded', sans-serif;
+    font-family: 'Droid Serif', serif;
+}
+
+// ********************************************************
+// **************************NAVBAR************************
+// ********************************************************
 
 nav {
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
+
+    // border-style: double;
+    // background-color: $white;
+    font-family: 'Encode Sans Expanded', sans-serif;
+    font-family: 'Droid Serif', serif;
+    list-style-type: none;
+    margin: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+    display: inline; 
+}
+
+    // ul {
+    //   list-style-type: none;
+    //   margin: 1rem;
+    //   padding: 1rem;
+    //   overflow: hidden;
+    // //   background-color: #CC9571;
+    // }
   
-    li { display: inline-block; }
-  
-    a {
-      display: block;
-      padding: 6px 12px;
-      text-decoration: none;
-    }
-  }
+    // li { display: inline; 
+    // }
+    
 
-body{
-    background-color: $cream;
-}
 
-h1 {
-    text-align: center;
+// ********************************************************
+// **************************LOGO**************************
+// ********************************************************
+
+.logo-icon {
+    width: 45%;
+    height: auto;
+    margin: 0 5px;
 }
 
-.navbar-default {
-    background-color: $x;
+// ********************************************************
+// **************************GIF***************************
+// ********************************************************
+
+.gif {
+    max-width: 100%;
+    height: auto;
+    justify-content: center;
 }
 
-.btn-info {
-    color: $x;
-    background-color: $x;
-    border-color: #46b8da;
+// ********************************************************
+// **************************USER CARDS********************
+// ********************************************************
+
+// .allUserCards {
+//     border-style: solid;
+//     background-color: $sky;
+//     border-width: 2px;
+//     border-radius: 5px;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 1rem 0;
+// }
+// cards bootstrapped
+#cardsMasterDiv {
+    display: inline-block;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0rem 1rem 2rem 1rem #9f9f9f;   
+    border-style: solid;
+    background-color: $white;
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
 }
-.main-container {
-    border: 2px dashed $x;
+// card images
+.allUserImage {
+    max-width: 95%;
+    height: auto;
+    
 }
-.container--auth {
-  background-color: white;
-  padding: 20px;
-  margin-top: 40px;
-  border-radius: 10px;
-  border: 2px solid #ccc;
+// images notes
+.allImageNotes {
+    font-family: 'Encode Sans Expanded', sans-serif;
+    font-family: 'Droid Serif', serif;
+
 }
