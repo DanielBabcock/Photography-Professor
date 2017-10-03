@@ -1,49 +1,107 @@
-$cream: #BBBBBD;
-$x: #77fee7;
-$b: #ffdf72;
-$y: #cbaacc;
-$c: #b062b2;
+$white: #FFFFFF;
+$sky: rgba(58, 232, 245, 0.74);
 
-nav {
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-  
-    li { display: inline-block; }
-  
-    a {
-      display: block;
-      padding: 6px 12px;
-      text-decoration: none;
-    }
-  }
-
+html {
+    background-color: $white;
+    
+}
 body{
-    background-color: $cream;
+    background-color: $white;
+    font-family: 'Encode Sans Expanded', sans-serif;
+    font-family: 'Droid Serif', serif;
+    padding-left: auto;
 }
 
-h1 {
+// ********************************************************
+// **************************NAVBAR************************
+// ********************************************************
+
+nav {
+    font-family: 'Encode Sans Expanded', sans-serif;
+    font-family: 'Droid Serif', serif;
+    list-style-type: none;
+    overflow: hidden;
+    padding-left: auto;
     text-align: center;
 }
 
-.navbar-default {
-    background-color: $x;
+ul {
+    list-style-type: none;
 }
 
-.btn-info {
-    color: $x;
-    background-color: $x;
-    border-color: #46b8da;
+li { 
+    display: inline; 
 }
-.main-container {
-    border: 2px dashed $x;
+
+// ********************************************************
+// **************************LOGO**************************
+// ********************************************************
+
+.logo-icon {
+    width: 10%;
+    height: auto;
+    margin: 0 5px;
 }
-.container--auth {
-  background-color: white;
-  padding: 20px;
-  margin-top: 40px;
-  border-radius: 10px;
-  border: 2px solid #ccc;
+
+// ********************************************************
+// **************************GIF***************************
+// ********************************************************
+
+.gif {
+    max-width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+// ********************************************************
+// **************************USER CARDS********************
+// ********************************************************
+
+.allUserCards {
+    // border-style: solid;
+    // background-color: $sky;
+    // border-width: 1px;
+    // border-radius: 1px;
+    // justify-content: center;
+    // align-items: center;
+    padding: 2px auto 2px auto;
+    margin: 2px auto 2px auto;
+}
+
+#cardsMasterDiv {
+    display: inline-flex;
+    // padding: 1rem;
+    margin: 0;
+    box-shadow: 0 1rem 2rem 0 #9f9f9f;   
+    border-style: outset;
+    background-color: $white;
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    padding-left: auto;
+
+}
+// card images
+.allUserImage {
+    max-width: 95%;
+    height: auto;
+    padding-left: auto;
+    padding: 4px auto 2px auto;
+    margin: 4px auto 2px auto;
+    
+}
+// images notes
+.allImageNotes {
+    font-family: 'Encode Sans Expanded', sans-serif;
+    font-family: 'Droid Serif', serif;
+    justify-content: center;
+    align-items: center;
+    // padding-left: auto;
+
+}
+
+#shutterBtn {
+    padding-left: auto;
+    justify-content: center;
 }
