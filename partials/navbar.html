@@ -2,12 +2,14 @@
 <!-- home page (on the left) // login (on the right)-->
 <!-- (v2 have home be drop down including blog, games, and whatnot) -->
 
-<nav class="navbar" ng-controller="navCtrl">
-        <ul class="nav navbar-nav navbar-right">
+<nav ng-controller="navCtrl">
+    <div>
+        <ul>
             <li><img class="logo-icon" src="images/testLogo.png"></li>    
             <li><button ng-show="!isLoggedIn" ng-click="loginGoogle()" class="btn btn-info">Login</button></li>
             <li><button ng-show="isLoggedIn" ng-click="logOut()">Logout</button></li>
         </ul>
+    </div>
 </nav>
 
  

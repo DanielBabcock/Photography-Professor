@@ -9,6 +9,7 @@ body{
     background-color: $white;
     font-family: 'Encode Sans Expanded', sans-serif;
     font-family: 'Droid Serif', serif;
+    padding-left: auto;
 }
 
 // ********************************************************
@@ -16,37 +17,28 @@ body{
 // ********************************************************
 
 nav {
-
-    // border-style: double;
-    // background-color: $white;
     font-family: 'Encode Sans Expanded', sans-serif;
     font-family: 'Droid Serif', serif;
     list-style-type: none;
-    margin: 1rem;
-    padding: 1rem;
     overflow: hidden;
-    display: inline; 
+    padding-left: auto;
+    text-align: center;
 }
 
-    // ul {
-    //   list-style-type: none;
-    //   margin: 1rem;
-    //   padding: 1rem;
-    //   overflow: hidden;
-    // //   background-color: #CC9571;
-    // }
-  
-    // li { display: inline; 
-    // }
-    
+ul {
+    list-style-type: none;
+}
 
+li { 
+    display: inline; 
+}
 
 // ********************************************************
 // **************************LOGO**************************
 // ********************************************************
 
 .logo-icon {
-    width: 45%;
+    width: 10%;
     height: auto;
     margin: 0 5px;
 }
@@ -65,38 +57,51 @@ nav {
 // **************************USER CARDS********************
 // ********************************************************
 
-// .allUserCards {
-//     border-style: solid;
-//     background-color: $sky;
-//     border-width: 2px;
-//     border-radius: 5px;
-//     justify-content: center;
-//     align-items: center;
-//     padding: 1rem 0;
-// }
-// cards bootstrapped
+.allUserCards {
+    // border-style: solid;
+    // background-color: $sky;
+    // border-width: 1px;
+    // border-radius: 1px;
+    // justify-content: center;
+    // align-items: center;
+    padding: 2px auto 2px auto;
+    margin: 2px auto 2px auto;
+}
+
 #cardsMasterDiv {
-    display: inline-block;
-    padding: 1rem;
-    margin: 1rem;
-    box-shadow: 0rem 1rem 2rem 1rem #9f9f9f;   
-    border-style: solid;
+    display: inline-flex;
+    // padding: 1rem;
+    margin: 0;
+    box-shadow: 0 1rem 2rem 0 #9f9f9f;   
+    border-style: outset;
     background-color: $white;
     border-width: 2px;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0;
+    padding-left: auto;
+
 }
 // card images
 .allUserImage {
     max-width: 95%;
     height: auto;
+    padding-left: auto;
+    padding: 4px auto 2px auto;
+    margin: 4px auto 2px auto;
     
 }
 // images notes
 .allImageNotes {
     font-family: 'Encode Sans Expanded', sans-serif;
     font-family: 'Droid Serif', serif;
+    justify-content: center;
+    align-items: center;
+    // padding-left: auto;
 
+}
+
+#shutterBtn {
+    padding-left: auto;
+    justify-content: center;
 }

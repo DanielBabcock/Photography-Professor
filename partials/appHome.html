@@ -17,7 +17,7 @@
     ********************************************************************** -->
     
         <!-- <div class="col-md-6"> -->
-        <div class="col-md-11 col-xs-12">
+        <div class="col-md-12 col-xs-12">
         Aperture:
                 <rzslider rz-slider-model="apertureSlider.value"
             rz-slider-options="apertureSlider.options"></rzslider>
@@ -38,9 +38,10 @@
 
    
     <div>
-        <button class="col-md-1 col-xs-12" id="shutterBtn" ng-click="shutterClickFunction()" type="image" src="images/shutterBtn.jpeg" alt="Submit">
+        <button class="col-md-4 col-xs-6" id="shutterBtn" ng-click="shutterClickFunction()" type="image" src="images/shutterBtn.jpeg" alt="Submit">
             {{submitButtonText}}Shutter Button</button>
     </div>
+    <br>
    
 
 
@@ -56,7 +57,7 @@
                 <div class="allImageNotes">
                         <!-- Image Notes:  -->                     
                                           
-                    <p>ƒ: {{items.aperture}}</p>
+                    <p>Aperture - ƒ: {{items.aperture}}</p>
                     <p>Shutter Speed: {{items.shutterSpeed}}</p>
                     <p>ISO: {{items.iso}}</p>
                     <!-- <p>{{items.exposure}}</p> -->

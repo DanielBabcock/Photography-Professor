@@ -140,61 +140,61 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
             "userNotes": [],             
             "uid": currentUser
         },
-        {
-            "image": "images/11.jpg",
-            "shutterSpeed": "1/30",
-            "aperture": "2",
-            "iso": "1250",
-            "location": "images/4.jpg",
-            "imageNotes": "",
-            "exposure": "0",
-            "userNotes": [],             
-            "uid": currentUser
-        },
-        {
-            "image": "images/12.jpg",
-            "shutterSpeed": "1/30",
-            "aperture": "2",
-            "iso": "640",
-            "location": "images/12.jpg",
-            "imageNotes": "",
-            "exposure": "0",
-            "userNotes": [],             
-            "uid": currentUser
-        },
-        {
-            "image": "images/13.jpg",
-            "shutterSpeed": "1/30",
-            "aperture": "2",
-            "iso": "320",
-            "location": "images/13.jpg",
-            "imageNotes": "",
-            "exposure": "0",
-            "userNotes": [],             
-            "uid": currentUser
-        },
-        {
-            "image": "images/14.jpg",
-            "shutterSpeed": "1/30",
-            "aperture": "2",
-            "iso": "200",
-            "location": "images/14.jpg",
-            "imageNotes": "",
-            "exposure": "0",
-            "userNotes": [],             
-            "uid": currentUser
-        },
-        {
-            "image": "images/15.jpg",
-            "shutterSpeed": "1/30",
-            "aperture": "2",
-            "iso": "100",
-            "location": "images/15.jpg",
-            "imageNotes": "",
-            "exposure": "0",
-            "userNotes": [],             
-            "uid": currentUser
-        },
+        // {
+        //     "image": "images/11.jpg",
+        //     "shutterSpeed": "1/30",
+        //     "aperture": "2",
+        //     "iso": "1250",
+        //     "location": "images/4.jpg",
+        //     "imageNotes": "",
+        //     "exposure": "0",
+        //     "userNotes": [],             
+        //     "uid": currentUser
+        // },
+        // {
+        //     "image": "images/12.jpg",
+        //     "shutterSpeed": "1/30",
+        //     "aperture": "2",
+        //     "iso": "640",
+        //     "location": "images/12.jpg",
+        //     "imageNotes": "",
+        //     "exposure": "0",
+        //     "userNotes": [],             
+        //     "uid": currentUser
+        // },
+        // {
+        //     "image": "images/13.jpg",
+        //     "shutterSpeed": "1/30",
+        //     "aperture": "2",
+        //     "iso": "320",
+        //     "location": "images/13.jpg",
+        //     "imageNotes": "",
+        //     "exposure": "0",
+        //     "userNotes": [],             
+        //     "uid": currentUser
+        // },
+        // {
+        //     "image": "images/14.jpg",
+        //     "shutterSpeed": "1/30",
+        //     "aperture": "2",
+        //     "iso": "200",
+        //     "location": "images/14.jpg",
+        //     "imageNotes": "",
+        //     "exposure": "0",
+        //     "userNotes": [],             
+        //     "uid": currentUser
+        // },
+        // {
+        //     "image": "images/15.jpg",
+        //     "shutterSpeed": "1/30",
+        //     "aperture": "2",
+        //     "iso": "100",
+        //     "location": "images/15.jpg",
+        //     "imageNotes": "",
+        //     "exposure": "0",
+        //     "userNotes": [],             
+        //     "uid": currentUser
+        // },
     
     
     
@@ -317,61 +317,61 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
     
     
     
-        {
-            "image": "images/26.jpg",
-            "shutterSpeed": "1/50",
-            "aperture": "8",
-            "iso": "25600",
-            "location": "images/26.jpg",
-            "imageNotes": "",
-            "exposure": "0",
-            "userNotes": [],             
-            "uid": currentUser
-        },
-        {
-            "image": "images/27.jpg",
-            "shutterSpeed": "1/50",
-            "aperture": "8",
-            "iso": "12800",
-            "location": "images/27.jpg",
-            "imageNotes": "",
-            "exposure": "0",
-            "userNotes": [],             
-            "uid": currentUser
-        },
-        {
-            "image": "images/28.jpg",
-            "shutterSpeed": "1/50",
-            "aperture": "8",
-            "iso": "6400",
-            "location": "images/28.jpg",
-            "imageNotes": "",
-            "exposure": "0",
-            "userNotes": [],             
-            "uid": currentUser
-        },
-        {
-            "image": "images/29.jpg",
-            "shutterSpeed": "1/50",
-            "aperture": "8",
-            "iso": "3200",
-            "location": "images/29.jpg",
-            "imageNotes": "",
-            "exposure": "0",
-            "userNotes": [],             
-            "uid": currentUser
-        },
-        {
-            "image": "images/30.jpg",
-            "shutterSpeed": "1/50",
-            "aperture": "8",
-            "iso": "1600",
-            "location": "images/30.jpg",
-            "imageNotes": "",
-            "exposure": "0",
-            "userNotes": [],             
-            "uid": currentUser
-        },
+        // {
+        //     "image": "images/26.jpg",
+        //     "shutterSpeed": "1/50",
+        //     "aperture": "8",
+        //     "iso": "25600",
+        //     "location": "images/26.jpg",
+        //     "imageNotes": "",
+        //     "exposure": "0",
+        //     "userNotes": [],             
+        //     "uid": currentUser
+        // },
+        // {
+        //     "image": "images/27.jpg",
+        //     "shutterSpeed": "1/50",
+        //     "aperture": "8",
+        //     "iso": "12800",
+        //     "location": "images/27.jpg",
+        //     "imageNotes": "",
+        //     "exposure": "0",
+        //     "userNotes": [],             
+        //     "uid": currentUser
+        // },
+        // {
+        //     "image": "images/28.jpg",
+        //     "shutterSpeed": "1/50",
+        //     "aperture": "8",
+        //     "iso": "6400",
+        //     "location": "images/28.jpg",
+        //     "imageNotes": "",
+        //     "exposure": "0",
+        //     "userNotes": [],             
+        //     "uid": currentUser
+        // },
+        // {
+        //     "image": "images/29.jpg",
+        //     "shutterSpeed": "1/50",
+        //     "aperture": "8",
+        //     "iso": "3200",
+        //     "location": "images/29.jpg",
+        //     "imageNotes": "",
+        //     "exposure": "0",
+        //     "userNotes": [],             
+        //     "uid": currentUser
+        // },
+        // {
+        //     "image": "images/30.jpg",
+        //     "shutterSpeed": "1/50",
+        //     "aperture": "8",
+        //     "iso": "1600",
+        //     "location": "images/30.jpg",
+        //     "imageNotes": "",
+        //     "exposure": "0",
+        //     "userNotes": [],             
+        //     "uid": currentUser
+        // },
         {
             "image": "images/31.jpg",
             "shutterSpeed": "1/30",
@@ -686,7 +686,17 @@ app.controller("appHomeCtrl", function($scope, $window, $location, cardFactory, 
                         value: image.shutterSpeed  
                     };
                 });
-                $scope.shutterSpeedSlider.options.stepsArray = allowedShutterSpeeds;
+
+                //get an array of just the numbers
+                let speeds = allowedShutterSpeeds.map(item => item.value);
+                
+                // pass the array of speeds to the Set constructor 
+                // to eliminate duplicates, THEN
+                // spread that set into an array, BECAUSE
+                //the rz-slider needs an array.
+                $scope.shutterSpeedSlider.options.stepsArray = [... new Set(speeds)];  
+              
+                console.log("shutterspeed slider", $scope.shutterSpeedSlider.options.stepsArray);
             }
         }
     };
