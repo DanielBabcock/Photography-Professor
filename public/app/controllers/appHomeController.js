@@ -1,7 +1,7 @@
 "use strict";
 
 // **********************************************
-//     Controls: Image dummy JSON, then sliders,
+//     Controls: Image JSON, then sliders,
 //         then shutter click to create cards, then 
 //         delete button for cards. 
 // **********************************************
