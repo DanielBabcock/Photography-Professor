@@ -2,3 +2,5 @@ lib/node_modules
 css/
 app/values
 lib/.sass-cache
+.DS_Store
+
